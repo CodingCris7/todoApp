@@ -9,7 +9,7 @@ const todoSlice = createSlice({
   initialState,
   reducers: {
     addTodo(state, { payload }) {
-      state.list.push(payload);
+      state.list.push({ ...payload, id: state.list.length + 1 });
     },
   },
 });
