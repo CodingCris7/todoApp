@@ -7,10 +7,11 @@ import TodoCard from '../components/TodoCard';
 
 const Home = () => {
   const todoList = useSelector((state) => state.todos.list);
+
   return (
     <div>
       <h1 className="flex">ToDo&apos;s List</h1>
-      <Link to="/add-todo">
+      <Link to="/add">
         <Add />
       </Link>
       {todoList.length > 0 && (

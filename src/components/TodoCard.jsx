@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import { Delete, Edit } from '@mui/icons-material';
 
@@ -9,7 +10,9 @@ const TodoCard = ({ todo }) => (
     <p>{todo.description}</p>
     <div>
       <Delete />
-      <Edit />
+      <Link to={`/edit/${todo.id}`}>
+        <Edit />
+      </Link>
     </div>
   </div>
 );
