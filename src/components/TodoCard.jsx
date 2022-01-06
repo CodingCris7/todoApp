@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 import { Delete, Edit } from '@mui/icons-material';
 
-const TodoCard = ({ todo }) => (
+const TodoCard = ({ todo, handleDelete }) => (
   <div>
     <h3>{todo.title}</h3>
     <p>{todo.description}</p>
     <div>
-      <Delete />
+      <Delete onClick={handleDelete} />
       <Edit />
     </div>
   </div>
@@ -20,6 +20,7 @@ TodoCard.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
   }),
+  handleDelete: PropTypes.func.isRequired,
 };
 
 TodoCard.defaultProps = {
