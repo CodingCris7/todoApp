@@ -4,18 +4,14 @@ import { Link } from 'react-router-dom';
 import { Add } from '@mui/icons-material';
 import TodoList from '../components/TodoList';
 
-const Home = () => {
-  const todoList = useSelector((state) => state.todos.list);
-
-  return (
-    <div>
-      <h1 className="flex">ToDo&apos;s List</h1>
-      <Link to="/add">
-        <Add />
-      </Link>
-      <TodoList />
-    </div>
-  );
-};
+const Home = () => (
+  <div>
+    <h1 className="flex">ToDo&apos;s List</h1>
+    <Link to="/add">
+      <Add />
+    </Link>
+    <TodoList />
+  </div>
+);
 
 export default Home;
