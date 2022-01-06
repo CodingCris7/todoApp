@@ -1,9 +1,8 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { Add } from '@mui/icons-material';
-import TodoCard from '../components/TodoCard';
+import TodoList from '../components/TodoList';
 
 const Home = () => {
   const todoList = useSelector((state) => state.todos.list);
@@ -14,9 +13,7 @@ const Home = () => {
       <Link to="/add">
         <Add />
       </Link>
-      {todoList.length > 0 && (
-        todoList.map((item) => <TodoCard key={item.id} todo={item} />)
-      )}
+      <TodoList />
     </div>
   );
 };
