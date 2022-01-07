@@ -9,6 +9,7 @@ const TodoForm = () => {
   const [todo, setTodo] = useState({
     title: '',
     description: '',
+    isCompleted: false,
   });
   const dispatch = useDispatch();
   const navigate = useNavigate();
