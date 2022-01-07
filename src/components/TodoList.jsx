@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteTodo } from '../stores/todosSlice';
+import { deleteTodo, toggleCompleted } from '../stores/todosSlice';
 
 import TodoCard from './TodoCard';
 
@@ -12,11 +12,20 @@ const TodoList = () => {
     dispatch(deleteTodo(id));
   };
 
+  const handleToggleComplete = (id) => () => {
+    dispatch(toggleCompleted(id));
+  };
+
   return (
     <div className="flex">
       {todoList.length > 0 && (
         todoList.map((item) => (
-          <TodoCard key={item.id} todo={item} handleDelete={handleDeleteTodo(item.id)} />
+          <TodoCard
+            key={item.id}
+            todo={item}
+            handleDelete={handleDeleteTodo(item.id)}
+            handleComplete={handleToggleComplete(item.id)}
+          />
         ))
       )}
     </div>
