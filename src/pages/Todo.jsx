@@ -1,24 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import { ArrowBack } from '@mui/icons-material';
+import Header from '../components/Header';
 import TodoForm from '../components/TodoForm';
-import usePath from '../hooks/usePath';
 
-const Todo = () => {
-  const path = usePath();
-
-  return (
-    <div>
-      <div>
-        <Link to="/">
-          <ArrowBack />
-        </Link>
-        <h1>{path}</h1>
-      </div>
-      <TodoForm />
-    </div>
-  );
-};
+const Todo = () => (
+  <div className="w-3/5 m-auto">
+    <Header />
+    <TodoForm />
+  </div>
+);
 
 export default Todo;

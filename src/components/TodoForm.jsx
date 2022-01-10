@@ -47,9 +47,9 @@ const TodoForm = () => {
   };
 
   return (
-    <div>
-      <form>
-        <label htmlFor="title">
+    <div className="w-1/2 mx-auto mt-3">
+      <form className="flex flex-col">
+        <label htmlFor="title" className="flex flex-col mb-4 text-dark-gray">
           Title:
           <input
             type="text"
@@ -57,18 +57,27 @@ const TodoForm = () => {
             id="title"
             value={todo.title}
             onChange={handleInput}
+            className="rounded border border-space-cadet"
           />
         </label>
-        <label htmlFor="description">
+        <label htmlFor="description" className="flex flex-col mb-4 text-dark-gray">
           Description:
           <textarea
             name="description"
             id="description"
             value={todo.description}
             onChange={handleInput}
+            maxLength="70"
+            className="rounded border border-space-cadet"
           />
         </label>
-        <button type="submit" onClick={handleSubmit}>Save</button>
+        <button
+          type="submit"
+          onClick={handleSubmit}
+          className="w-1/2 mx-auto mt-4 p-2 rounded text-white bg-prussian-blue"
+        >
+          Save
+        </button>
       </form>
     </div>
   );
