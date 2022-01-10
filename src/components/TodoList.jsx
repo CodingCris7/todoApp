@@ -17,18 +17,19 @@ const TodoList = () => {
   };
 
   return (
-    <div className="flex">
-      {todoList.length > 0 && (
-        todoList.map((item) => (
+    <section className="mt-6">
+      <h1 className="mb-2 text-2xl text-dark-gray">Tasks List</h1>
+      <div className="flex">
+        {todoList.map((item) => (
           <TodoCard
             key={item.id}
             todo={item}
             handleDelete={handleDeleteTodo(item.id)}
             handleComplete={handleToggleComplete(item.id)}
           />
-        ))
-      )}
-    </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

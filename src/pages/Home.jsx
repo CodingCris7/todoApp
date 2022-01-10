@@ -1,17 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-import { Add } from '@mui/icons-material';
+import Header from '../components/Header';
 import TodoList from '../components/TodoList';
 
-const Home = () => (
-  <div>
-    <h1 className="flex">ToDo&apos;s List</h1>
-    <Link to="/add">
-      <Add />
-    </Link>
-    <TodoList />
-  </div>
-);
+const Home = () => {
+  const todosList = useSelector((state) => state.todos.list);
+
+  return (
+    <div className="w-3/5 m-auto">
+      <Header />
+      {(todosList.length > 0) && <TodoList />}
+    </div>
+  );
+};
 
 export default Home;
