@@ -11,6 +11,7 @@ const TodoForm = () => {
     description: '',
     isCompleted: false,
   });
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams();
@@ -73,8 +74,10 @@ const TodoForm = () => {
         </label>
         <button
           type="submit"
+          id="btn-submit"
           onClick={handleSubmit}
-          className="w-1/2 mx-auto mt-4 p-2 rounded text-white bg-prussian-blue"
+          className="w-1/2 mx-auto mt-4 p-2 rounded text-white bg-prussian-blue disabled:bg-gray-300"
+          disabled={!todo.title}
         >
           Save
         </button>
